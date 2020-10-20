@@ -1,0 +1,7 @@
+/Datasheets/
+/debug/
+/src/out/
+.vscode/*
+*.code-workspace
+.history/
+/pdf/
