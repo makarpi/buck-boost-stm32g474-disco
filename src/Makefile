@@ -38,7 +38,7 @@ LD_SCRIPT = STM32G474RETx_FLASH.ld
 OUT_DIR = out
 
 # global definitions for C++, C and ASM (e.g. "symbol_with_value=0xDEAD symbol_without_value")
-GLOBAL_DEFS = STM32G474xx USE_FULL_LL_DRIVER
+GLOBAL_DEFS = STM32G474xx USE_FULL_LL_DRIVER __FPU_PRESENT=1
 
 # C++ definitions
 CXX_DEFS =
@@ -53,6 +53,7 @@ AS_DEFS =
 # headers, current folder is always included)
 
 INC_DIRS = hardware/core
+INC_DIRS += hardware/hrtim
 INC_DIRS += hardware/usart
 INC_DIRS += hardware/utils
 # INC_DIRS += system/console
@@ -72,7 +73,7 @@ LIBS = -lm -lc
 # folders with source files, current folder is always included)
 
 SRCS_DIRS += hardware/core
-# SRCS_DIRS += hardware/usart
+SRCS_DIRS += hardware/hrtim
 # SRCS_DIRS += system/console
 SRCS_DIRS += lib/STM32G4xx_HAL_Driver/Src
 
